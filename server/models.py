@@ -1,8 +1,9 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from server import db
 
 class Future(db.Model):
-    ID = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(50))
-    prize = db.Column(db.Integer)
-    fortune = db.Column(db.string(150))
-    
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String(30), nullable=False)
+	prize = db.Column(db.String(30), nullable=False)
+	fortune = db.Column(db.String(150), nullable=False, unique=True)

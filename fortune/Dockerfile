@@ -1,5 +1,6 @@
 #Use Python 3.6 as a base image
 FROM python:3.6
+
 RUN apt-get update && apt-get install -y python3-pip
 # Copy contents into image
 COPY . .
@@ -8,4 +9,4 @@ RUN pip install -r requirements.txt
 # Expose correct port
 EXPOSE 5000
 # Create an entrypoint
-ENTRYPOINT ["python3", "app.py"]
+ENTRYPOINT ["python3", "fortune.py"]

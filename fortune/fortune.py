@@ -10,11 +10,11 @@ app = Flask(__name__)
 def fortune():
     prize=request.get_json()["prize"]
     name=request.get_json()["name"]
-    if int(prize) < 5 and len(name) < 5:
+    if int(prize) <= 5 and len(name) <= 5:
         answer = "will lose it to an online scam"
-    elif int(prize) < 5 and len(name) > 5:
+    elif int(prize) <= 5 and len(name) > 5:
         answer = "will lose it investing on a 'Big Chungus' NFT"
-    elif int(prize) > 5 and len(name) < 5:
+    elif int(prize) > 5 and len(name) <= 5:
         answer = "will lose it behind the sofa"
     elif int(prize) > 5 and len(name) > 5:
         answer = "will lose it gambling on a turtle race"    

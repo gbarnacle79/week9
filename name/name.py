@@ -1,5 +1,5 @@
 from flask import Flask, Response, request
-from random import randint
+import random
 
 app = Flask(__name__)
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/fortune_finder/name', methods=['GET'])
 def name():
     name = ["Anya", "Ben", "Charlie", "Daniel", "Ellie", "Francis", "George", "Hannah", "Izzy", "Joe", "Katie", "Liam", "Matthew", "Nathan", "Oliver", "Peter", "Quinn", "Ry", "Sophie", "Thomas", "Ulysses", "Valentine", "Wendy", "Xanthe", "Yohan", "Zoe"]
-    random_name = name[randint(0,25)]
+    random_name = name[random.randint(0,25)]
     return Response(random_name, mimetype="text/plain")
 
 if __name__ == "__main__":

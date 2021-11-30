@@ -2,28 +2,30 @@ version: '3.8'
 services:
   frontend:
     container_name: server
-    image: gbarnacle79-frontend
+    image: gbarnacle79/frontend
     build: ./server
+    deploy:
+      replicas: 2
     ports:
     - published: 5000
       target: 5000
   name:
     container_name: name
-    image:  gbarnacle79-name_gen
+    image:  gbarnacle79/name_gen
     build: ./name
     ports:
     - published: 5001
       target: 5001
   prize:
     container_name: prize
-    image: gbarnacle79-prize_gen
+    image: gbarnacle79/prize_gen
     build: ./prize
     ports:
     - published: 5002
       target: 5002
   fortune:
     container_name: fortune
-    image:  gbarnacle79-fortune_gen
+    image:  gbarnacle79/fortune_gen
     build: ./fortune
     ports:
     - published: 5003
