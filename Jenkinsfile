@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Run unit tests') {
+        stage('Unit testing') {
             steps {
                 sh "bash test.sh"
             }
