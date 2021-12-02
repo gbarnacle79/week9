@@ -8,3 +8,4 @@ pytest-cov
 flask_wtf
 wtforms
 requests
+requests_mock
