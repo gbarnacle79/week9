@@ -3,19 +3,19 @@ python3 -m venv venv
 cd fortune
 source venv/bin/activate
 pip3 install -r requirements.txt
-python3 -m pytest --cov=fortune fortune.py
+python3 -m pytest --cov=fortune
 cd ..
 cd name
 source venv/bin/activate
 pip3 install -r requirements.txt
-python3 -m pytest --cov=name name.py
+python3 -m pytest --cov=name
 cd ..
 cd prize
 source venv/bin/activate
 pip3 install -r requirements.txt
-python3 -m pytest --cov=prize prize.py
+python3 -m pytest --cov=prize
 cd ..
 cd server
 source venv/bin/activate
 pip3 install -r requirements.txt
-python3 -m pytest --cov=server app.py
+python3 -m pytest --cov=server
