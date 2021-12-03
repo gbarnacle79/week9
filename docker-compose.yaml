@@ -1,7 +1,7 @@
 version: '1.25'
 services:
   frontend:
-    container_name: server
+    container_name: frontend
     image: gbarnacle79/frontend
     build: ./server
     deploy:
