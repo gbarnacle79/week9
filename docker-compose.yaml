@@ -1,41 +1,29 @@
-version: '3.8'
+version: '1.25'
 services:
-  frontend:
-    container_name: server
-    image: gbarnacle79/frontend
+  server:
+    image: gbarnacle79/server
     build: ./server
     deploy:
       replicas: 2
-    ports:
-    - published: 5000
-      target: 5000
   name:
-    container_name: name
     image:  gbarnacle79/name_gen
     build: ./name
-    ports:
-    - published: 5001
-      target: 5001
   prize:
-    container_name: prize
     image: gbarnacle79/prize_gen
     build: ./prize
-    ports:
-    - published: 5002
-      target: 5002
+    deploy:
+      replicas: 2
   fortune:
-    container_name: fortune
     image:  gbarnacle79/fortune_gen
     build: ./fortune
-    ports:
-    - published: 5003
-      target: 5003
+    deploy:
+      replicas: 2
+
   nginx:
     image: nginx:latest
     ports:
     - target: 80
       published: 80
-      protocol: tcp
     volumes:
     - type: bind
       source: ./nginx/nginx.conf
