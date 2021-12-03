@@ -17,5 +17,10 @@ pipeline {
                 sh "docker-compose push" }
         }
     }
-
+             stage('Ansible Deploy') {
+             
+            steps {
+           
+           sh "scp     
+           sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"
 }
