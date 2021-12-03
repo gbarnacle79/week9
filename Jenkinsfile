@@ -14,5 +14,6 @@ pipeline {
                 sh "docker-compose --d"
                 sh "docker-login $git"
                 sh "docker-compose push" }
+        }
     }
 }
