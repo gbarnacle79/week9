@@ -2,6 +2,7 @@ pipeline {
     environment {
         D_USER = credentials('docker_username')
         D_PASS = credentials('docker_password')
+        SSH = credentials('Ansible-ssh')
     }
     agent any
     stages {
@@ -19,8 +20,8 @@ pipeline {
         }
         stage('Ansible Deploy') {
              steps {
-           sh 'scp -i ~/.ssh/id_rsa /home/gbarnacle79/week9/docker-compose.yaml manager:'
-           sh 'scp -i ~/.ssh/id_rsa /home/gbarnacle79/week9/nginx.conf manager:'
+           sh 'scp -i $SSH /home/gbarnacle79/week9/docker-compose.yaml manager:'
+           sh 'scp -i $SSH /home/gbarnacle79/week9/nginx.conf manager:'
            sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"}
         }
 }
