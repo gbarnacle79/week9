@@ -22,7 +22,7 @@ pipeline {
              steps {
            sh 'scp -i ~/.ssh/id_rsa docker-compose.yaml 35.197.243.229:'
            sh 'scp -i ~/.ssh/id_rsa nginx.conf 35.197.243.229:'
-           sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"}
+           sh "ansible-playbook -i ansible/inventory.yaml ansible/playbook.yaml"}
         }
 }
 }
