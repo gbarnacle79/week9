@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Ansible Deploy') {
              steps {
-           sh 'scp -i $SSH docker-compose.yaml manager:'
-           sh 'scp -i $SSH nginx.conf manager:'
+           sh 'scp -i $SSH docker-compose.yaml manager:/home/jenkins/docker-compose.yaml'
+           sh 'scp -i $SSH nginx.conf manager:/home/jenkins/nginx.conf'
            sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"}
         }
 }
