@@ -15,14 +15,12 @@ pipeline {
                 sh "docker-compose up -d"
                 sh "docker login -u=$D_USER -p=$D_PASS"
                 sh "docker-compose push" }
+            }
         }
-    }
-             stage('Ansible Deploy') {
-             
-            steps {
-           
+        stage('Ansible Deploy') {
+             steps {
            sh 'scp -i /home/gbarnacle79/.ssh/id_rsa.pub /home/gbarnacle79/week9/docker-compose.yaml manager:'
            sh 'scp -i /home/gbarnacle79/.ssh/id_rsa.pub /home/gbarnacle79/week9/nginx.conf manager:'
-                sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"}
+           sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"}
         }
 }
