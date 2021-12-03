@@ -5,33 +5,20 @@ services:
     build: ./server
     deploy:
       replicas: 2
-    ports:
-    - published: 5000
-      target: 5000
   name:
     image:  gbarnacle79/name_gen
     build: ./name
-    deploy:
-      replicas: 2
-    ports:
-    - published: 5001
-      target: 5001
   prize:
     image: gbarnacle79/prize_gen
     build: ./prize
     deploy:
       replicas: 2
-    ports:
-    - published: 5002
-      target: 5002
   fortune:
     image:  gbarnacle79/fortune_gen
     build: ./fortune
     deploy:
       replicas: 2
-    ports:
-    - published: 5003
-      target: 5003
+
   nginx:
     image: nginx:latest
     ports:
