@@ -1,8 +1,8 @@
 version: '1.25'
 services:
-  frontend:
-    container_name: frontend
-    image: gbarnacle79/frontend
+  server:
+    container_name: server
+    image: gbarnacle79/server
     build: ./server
     deploy:
       replicas: 2
