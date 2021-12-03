@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh "docker-compose up-d"
                 sh "docker-login -u=$git_USR -p=$git_PSW"
-                sh "docker-compose push" 
+                sh "docker-compose push" }
         }
     }
 
