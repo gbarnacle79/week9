@@ -1,6 +1,7 @@
 pipeline {
     environment {
-        AUTH = credentials("dockerhub_id")
+        D_USER = credentials('docker_username')
+        D_PASS = credentials('docker_password')
     }
     agent any
     stages {
@@ -12,7 +13,7 @@ pipeline {
         stage('Build images and push to dockerhub'){
             steps{
                 sh "docker-compose up -d"
-                sh "docker login -u=$AUTH_USR -p=$AUTH_PSW ${env.AUTH}"
+                sh "docker login -u=$D_USER -p=$D_PASS"
                 sh "docker-compose push" }
         }
     }
