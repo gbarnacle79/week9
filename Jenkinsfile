@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh "docker-compose up -d"
                 sh "docker login -u=$D_USER -p=$D_PASS"
-                sh "docker-compose push" }
+                sh "docker-compose push" 
             }
         }
         stage('Ansible Deploy') {
