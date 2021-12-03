@@ -25,6 +25,7 @@
     name: nginx
     state: started
   ignore_errors: yes
+  become: yes
  
 - name: Add nginx.conf
   template:
