@@ -1,0 +1,27 @@
+---
+# tasks file for common
+- name: install docker from script
+  shell:
+    cmd: curl https://get.docker.com | bash
+  become: yes
+
+
+- name: add worker to docker group
+  user:
+    name: worker
+    group: docker
+    append: yes
+  become: yes
+
+- name: Init a new swarm
+  docker_swarm:
+    state: present
+  become: yes
+
+- name: Add nodes
+  docker_swarm:
+    state: join
+    advertise_addr: worker
+    join_token: "{{ hostvars['35.197.243.229']['result']['swarm_facts']['JoinTokens']['Worker'] }}"
+    remote_addrs: [ 'manager:2377' ]
+  become: yes

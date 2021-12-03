@@ -1,0 +1,82 @@
+--- #
+- name: Install docker
+  apt:
+    name: python-docker
+    state: latest
+    update_cache: true
+  become: yes
+
+- name: Install pip
+  apt:
+    name: python3-pip
+    state: latest
+    update_cache: true
+  become: yes
+
+- name: Install nginx
+  apt:
+    name: nginx
+    state: latest
+    update_cache: true
+  become: yes
+ 
+- name: Start nginx
+  service: 
+    name: nginx
+    state: started
+  ignore_errors: yes
+ 
+- name: Add nginx.conf
+  template:
+      src: "./nginx.conf"
+      dest: /etc/nginx/nginx.conf
+  become: yes
+  register: nginx_config
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+  become: yes
+  when: nginx_config.changed == true
+
+
+
+
+- name: add node to docker group
+  user:
+    name: jenkins
+    group: docker
+    append: yes
+  become: yes
+  
+- name: Init a new swarm
+  docker_swarm:
+    state: present
+  become: yes
+  
+- name: Get info on Docker Swarm
+  docker_swarm_info:
+  ignore_errors: yes
+  register: result
+  become: yes
+
+- name: Advertise address
+  docker_swarm:
+    state: present
+    advertise_addr: manager
+  become: yes
+
+- name: pip install dependencies
+  pip:
+    name:
+      - jsondiff
+      - docker
+    executable: pip3
+
+- name: Deploy stack
+  docker_stack:
+    state: present
+    name: mystack
+    compose:
+      - /home/jenkins/docker-compose.yml
