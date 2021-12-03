@@ -12,7 +12,7 @@ pipeline {
         }  stage('Build images and push to dockerhub'){
             steps{
                 sh "docker-compose up-d"
-                sh "docker-login $git"
+                sh "docker-login -u=$git_USR -p=$git_PSW"
                 sh "docker-compose push" }
         }
     }
