@@ -2,13 +2,13 @@ manager:
   hosts:
     35.197.243.229:
   vars:  
-    ansible_user: gbarnacle79
+    ansible_user: jenkins
     ansible_ssh_private_key_file: ~/.ssh/id_rsa
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 worker:
   hosts:
     34.105.178.165:
   vars:
-    ansible_user: gbarnacle79
+    ansible_user: jenkins
     ansible_ssh_private_key_file: ~/.ssh/id_rsa
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
