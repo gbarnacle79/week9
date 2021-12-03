@@ -21,6 +21,7 @@ pipeline {
              
             steps {
            
-           sh "scp     
+           sh 'scp -i /home/gbarnacle79/.ssh/id_rsa.pub /home/gbarnacle79/week9/docker-compose.yaml manager:'
+           sh 'scp -i /home/gbarnacle79/.ssh/id_rsa.pub /home/gbarnacle79/week9/nginx.conf manager:'
            sh "ansible-playbook -i week9/inventory.yaml week9/playbook.yaml"
 }
