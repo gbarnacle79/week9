@@ -13,7 +13,7 @@ pipeline {
         stage('Build images and push to dockerhub'){
             steps{
                 sh "docker-compose up -d"
-                sh "docker-login -u=$registryCredentials_USR -p=$registryCredentials_PSW"
+                sh "docker-login -u=$registryCredentials_USR -p=$registryCredentials_PSW ${env.registryCredential}"
                 sh "docker-compose push" }
         }
     }
