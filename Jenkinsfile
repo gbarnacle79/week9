@@ -7,7 +7,7 @@ pipeline {
         stage('Unit testing') {
             steps {
                 sh "bash test.sh"
-               
+                }
             }
 
         }
