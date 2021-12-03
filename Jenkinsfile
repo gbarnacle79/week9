@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "gbarnacle79/Cheesepuffs1"
+        registry = "gbarnacle79/*****"
         registryCredential = "git"
     }
     agent any
@@ -8,9 +8,11 @@ pipeline {
         stage('Unit testing') {
             steps {
                 sh "bash test.sh"
-                
-            }
-
-        }
+             }
+        } - stage('Build images and push to dockerhub'){
+            steps{
+                sh "docker-compose --d"
+                sh "docker-login $git
+                sh "docker-compose push
     }
 }
