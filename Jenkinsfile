@@ -9,11 +9,12 @@ pipeline {
             steps {
                 sh "bash test.sh"
              }
-        }  stage('Build images and push to dockerhub'){
+        }  
+        stage('Build images and push to dockerhub'){
             steps{
                 sh "docker-compose up-d"
                 sh "docker-login -u=$git_USR -p=$git_PSW"
-                sh "docker-compose push" }
+                sh "docker-compose push" 
         }
     }
 
