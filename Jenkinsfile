@@ -1,7 +1,6 @@
 pipeline {
     environment {
-        registry = "gbarnacle79/*****"
-        registryCredential = credentials("git")
+        AUTH = credentials("dockerhub_id")
     }
     agent any
     stages {
@@ -13,7 +12,7 @@ pipeline {
         stage('Build images and push to dockerhub'){
             steps{
                 sh "docker-compose up -d"
-                sh "docker-login -u=$registryCredentials_USR -p=$registryCredentials_PSW ${env.registryCredential}"
+                sh "docker-login -u=$AUTH_USR -p=$AUTH_PSW ${env.AUTH}"
                 sh "docker-compose push" }
         }
     }
