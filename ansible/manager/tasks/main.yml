@@ -80,4 +80,4 @@
     state: present
     name: mystack
     compose:
-      - /home/jenkins/docker-compose.yml
+      - /home/jenkins/docker-compose.yaml
