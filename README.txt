@@ -36,42 +36,6 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 
   
 
-The ERD for the databases is shown below.  
-
-  
-
-![ERD database](https://github.com/gbarnacle79/week_6_project/blob/main/Images/erdp-database.png)  
-
-  
-
-After selecting a subscription tier and a game the customer would like to purchase the user’s data is added to the database and is automatically assigned an ID. 
-
-  
-
-![createcustomer](https://github.com/gbarnacle79/week_6_project/blob/main/Images/Add_customer.png) 
-
-  
-
-After submission the user is redirected to a webpage which shows data from the customer database. This information includes name, age, game ID and available options of either editing user data or cancelling subscription which deletes the customer from the database.   
-
-  
-
-![customer database page](https://github.com/gbarnacle79/week_6_project/blob/main/Images/customer_information_system.png)  
-
-  
-
-Clicking on the customer's name takes you to a new page that gives the details of the customer.At the top of the screen is a link that redirects the user back to the homepage.   
-
-  
-
-![homepage](https://github.com/gbarnacle79/week_6_project/blob/main/Images/homepage.png) 
-
-  
-
-Clicking on a game’s name takes you to a new page that gives the details of the game. The game’s also have an operations section to and if one clicks on edit game they’re brought to a page where one can edit the details of the game to keep the records up to date. The “New Games!” links to a page which allows one to add a new game to the database and it is automatically assigned an ID  
-
-  
-
   
 
   
@@ -112,6 +76,20 @@ The Visual Studio Code was linked to a virtual machine on the Google Cloud Platf
 
   
 
+## Ansible Pipeline: 
+
+As discussed before ansible was used to configure the VM’s in order to get them to run a docker swarm of the below are images of the sections of the pipeline: 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
 ## Tests:  
 
   
@@ -151,3 +129,17 @@ A risk assessment was performed to gauge potential issues the app may suffer fro
 In the initial outline of the project, it was intended for the database to be hosted on GCP and to be a full MySQL database, this would allow for data to be saved for future viewings. This was changed to a simpler SQLite database it was easier to configure in regards to docker containers and accrued less cost on the Google Cloud Platform. In future iterations of this project this would be changed 
 
   
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+  
+
+ 
