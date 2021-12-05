@@ -22,6 +22,6 @@
   docker_swarm:
     state: join
     advertise_addr: worker
-    join_token: "{{ hostvars['35.197.243.229']['result']['swarm_facts']['JoinTokens']['Worker'] }}"
+    join_token: "{{ hostvars['34.105.178.165']['result']['swarm_facts']['JoinTokens']['Worker'] }}"
     remote_addrs: [ 'manager:2377' ]
   become: yes
