@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Ansible Deploy') {
              steps {
-           sh 'scp -i ~/.ssh/jenkins_id_rsa docker-compose.yaml 34.105.178.165:'
-           sh 'scp -i ~/.ssh/jenins_id_rsa nginx.conf 34.105.178.165:'
+           sh 'scp ssh -o StrictHostKeyChecking=no docker-compose.yaml 34.105.178.165:'
+           sh 'scp ssh -o StrictHostKeyChecking=no nginx.conf 34.105.178.165:'
            sh "ansible-playbook -i ansible/inventory.yaml ansible/playbook.yaml"}
         }
 }
