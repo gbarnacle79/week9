@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Ansible Deploy') {
              steps {
-           sh 'scp -i ~/.ssh/id_rsa docker-compose.yaml 35.197.243.229:'
-           sh 'scp -i ~/.ssh/id_rsa nginx.conf 35.197.243.229:'
+           sh 'scp -i ~/.ssh/id_rsa docker-compose.yaml 34.105.178.165:'
+           sh 'scp -i ~/.ssh/id_rsa nginx.conf 34.105.178.165:'
            sh "ansible-playbook -i ansible/inventory.yaml ansible/playbook.yaml"}
         }
 }
