@@ -32,7 +32,7 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 
   
 
-![ERD create customer](https://github.com/gbarnacle79/week_6_project/blob/main/Images/erd_createcustomer.png) 
+![ERD create customer](https://github.com/gbarnacle79/week9/issues/10#issue-1071578323) 
 
   
 
@@ -60,7 +60,7 @@ The burndown chart is shown below
 
   
 
-![burndown chart](https://github.com/gbarnacle79/week_6_project/blob/main/Images/burndownchart.png)  
+![burndown chart](https://github.com/gbarnacle79/week9/issues/13#issue-1071579211)  
 
   
 
@@ -81,9 +81,11 @@ The Visual Studio Code was linked to a virtual machine on the Google Cloud Platf
 As discussed before ansible was used to configure the VM’s in order to get them to run a docker swarm of the below are images of the sections of the pipeline: 
 
  
-
+![Ansible Pipeline 1](https://github.com/gbarnacle79/week9/issues/6#issue-1071578087)  
  
+![Ansible Pipeline 2](https://github.com/gbarnacle79/week9/issues/7#issue-1071578154)  
 
+![Ansible Pipeline 3](https://github.com/gbarnacle79/week9/issues/8#issue-1071578224)  
  
 
  
@@ -98,15 +100,18 @@ Tests were written in order to ensure each aspect of the application was running
 
 To test the API functionality of the of the app, request_mock was used to mock the response from random.randint() to assert specific values in order to test the response of the app if it received said values.   
 
+ Below are the coverage reports for the testing of each service
+
+![Unit test 1](https://github.com/gbarnacle79/week9/issues/4#issue-1071577904)  
  
+![Unit test 2](https://github.com/gbarnacle79/week9/issues/2#issue-1071577541)   
 
-  
+![Unit test 3](https://github.com/gbarnacle79/week9/issues/5#issue-1071577994)  
 
-![jenkins build](https://github.com/gbarnacle79/week_6_project/blob/main/Images/jenkins_build.png) 
+![Unit test 4](https://github.com/gbarnacle79/week9/issues/3#issue-1071577801)  
 
-  
 
-![coverage report](https://github.com/gbarnacle79/week_6_project/blob/main/Images/Coverage_report.png) 
+ 
 
   
 
@@ -128,7 +133,12 @@ A risk assessment was performed to gauge potential issues the app may suffer fro
 
 In the initial outline of the project, it was intended for the database to be hosted on GCP and to be a full MySQL database, this would allow for data to be saved for future viewings. This was changed to a simpler SQLite database it was easier to configure in regards to docker containers and accrued less cost on the Google Cloud Platform. In future iterations of this project this would be changed 
 
-  
+
+## Future Plans:
+
+If future progress was made on this app, it would be intended to create some CRUD functionality on the site, allowing for users to input names or prizes and to generate the fortune from these inputs. Below is an ERD diagram to show how this might be implemented
+
+ ![Risk Assessment](https://github.com/gbarnacle79/week9/issues/14#issue-1071582302) 
 
   
 
