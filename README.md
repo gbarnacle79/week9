@@ -32,7 +32,7 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 
   
 
-![ERD create customer](https://github.com/gbarnacle79/week9/issues/10#issue-1071578323) 
+![ERD create customer](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.14.47.png) 
 
   
 
@@ -60,7 +60,7 @@ The burndown chart is shown below
 
   
 
-![burndown chart](https://github.com/gbarnacle79/week9/issues/13#issue-1071579211)  
+![burndown chart](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.50.40.png)  
 
   
 
@@ -74,6 +74,9 @@ The Visual Studio Code was linked to a virtual machine on the Google Cloud Platf
 
  A Jenkins pipeline was used as part of the CI pipeline, Jenkins uses a github webhook to clone the repository down and uses the pipeline script (Jenkinsfile) in order to do unit testing on the updated version of the app.  It then builds the 4 containers and deploys them to dockerhub. It then uses ansible to configure two VM’s, it does this by using two ansible roles, one for each machine. These roles download dependencies for the two machines and set up a docker swarm making one of the VM’s a manager and one to be the worker. The swarm manager is then sent a docker-config file via SCP which it uses to run the application. The worker is used to build replicas of the containers so that it has higher redundancy and availability to the application, 
 
+The CI pipeline is shown below in this diagram
+
+![CI pipeline](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.14.19.png)
   
 
 ## Ansible Pipeline: 
@@ -81,11 +84,11 @@ The Visual Studio Code was linked to a virtual machine on the Google Cloud Platf
 As discussed before ansible was used to configure the VM’s in order to get them to run a docker swarm of the below are images of the sections of the pipeline: 
 
  
-![Ansible Pipeline 1](https://github.com/gbarnacle79/week9/issues/6#issue-1071578087)  
+![Ansible Pipeline 1](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.59.40.png)  
  
-![Ansible Pipeline 2](https://github.com/gbarnacle79/week9/issues/7#issue-1071578154)  
+![Ansible Pipeline 2](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2021.00.07.png)  
 
-![Ansible Pipeline 3](https://github.com/gbarnacle79/week9/issues/8#issue-1071578224)  
+![Ansible Pipeline 3](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2021.00.37.png)  
  
 
  
@@ -102,13 +105,13 @@ To test the API functionality of the of the app, request_mock was used to mock t
 
  Below are the coverage reports for the testing of each service
 
-![Unit test 1](https://github.com/gbarnacle79/week9/issues/4#issue-1071577904)  
+![Unit test 1](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.57.25.png)  
  
-![Unit test 2](https://github.com/gbarnacle79/week9/issues/2#issue-1071577541)   
+![Unit test 2](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.54.46.png)   
 
-![Unit test 3](https://github.com/gbarnacle79/week9/issues/5#issue-1071577994)  
+![Unit test 3](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.54.21.png)  
 
-![Unit test 4](https://github.com/gbarnacle79/week9/issues/3#issue-1071577801)  
+![Unit test 4](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.53.52.png)  
 
 
  
@@ -123,7 +126,7 @@ To test the API functionality of the of the app, request_mock was used to mock t
 
 A risk assessment was performed to gauge potential issues the app may suffer from when running and to try avoid them. 
 
-![Risk Assessment](https://github.com/gbarnacle79/week_6_project/blob/main/Images/riskassessment.png) 
+![Risk Assessment](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2023.05.29.png) 
 
   
 
@@ -138,7 +141,7 @@ In the initial outline of the project, it was intended for the database to be ho
 
 If future progress was made on this app, it would be intended to create some CRUD functionality on the site, allowing for users to input names or prizes and to generate the fortune from these inputs. Below is an ERD diagram to show how this might be implemented
 
- ![Risk Assessment](https://github.com/gbarnacle79/week9/issues/14#issue-1071582302) 
+ ![Stretch ERD](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.15.24.png) 
 
   
 
