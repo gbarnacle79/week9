@@ -32,7 +32,7 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 
   
 
-![ERD create customer](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.14.47.png) 
+![ERD create customer](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.21.01.png) 
 
   
 
@@ -141,7 +141,7 @@ In the initial outline of the project, it was intended for the database to be ho
 
 If future progress was made on this app, it would be intended to create some CRUD functionality on the site, allowing for users to input names or prizes and to generate the fortune from these inputs. Below is an ERD diagram to show how this might be implemented
 
- ![Stretch ERD](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.15.24.png) 
+ ![Stretch ERD](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.22.18.png) 
 
   
 
