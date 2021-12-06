@@ -35,7 +35,7 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 ![ERD create customer](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.21.01.png) 
 
   
-
+Example image of the app 
   
 
 ![webapp](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.42.43.png)
@@ -143,7 +143,9 @@ If future progress was made on this app, it would be intended to create some CRU
 
  ![Stretch ERD](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.22.18.png) 
 
-  
+ ## Known Issues:
+ 
+ The manager VM set up from the ansible does not have access to dockerhub and returns the error message "Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock" when attempting to view the containers, in order to avoid this currently one must manually configure the VM and use the command sudo chmod 666 /var/run/docker.sock to give permission to run containers.
 
   
 
