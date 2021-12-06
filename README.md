@@ -38,7 +38,7 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 
   
 
-  
+![webapp](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.42.43.png)
 
 ## Continuous Integration:  
 
