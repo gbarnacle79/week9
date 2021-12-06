@@ -32,13 +32,13 @@ A user can refresh the page to view a new name, prize and fortune.  An ERD of th
 
   
 
-![ERD create customer](https://github.com/gbarnacle79/week_6_project/blob/main/Images/erd_createcustomer.png) 
+![ERD create customer](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.21.01.png) 
 
   
 
   
 
-  
+![webapp](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.42.43.png)
 
 ## Continuous Integration:  
 
@@ -60,7 +60,7 @@ The burndown chart is shown below
 
   
 
-![burndown chart](https://github.com/gbarnacle79/week_6_project/blob/main/Images/burndownchart.png)  
+![burndown chart](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.50.40.png)  
 
   
 
@@ -74,6 +74,9 @@ The Visual Studio Code was linked to a virtual machine on the Google Cloud Platf
 
  A Jenkins pipeline was used as part of the CI pipeline, Jenkins uses a github webhook to clone the repository down and uses the pipeline script (Jenkinsfile) in order to do unit testing on the updated version of the app.  It then builds the 4 containers and deploys them to dockerhub. It then uses ansible to configure two VM’s, it does this by using two ansible roles, one for each machine. These roles download dependencies for the two machines and set up a docker swarm making one of the VM’s a manager and one to be the worker. The swarm manager is then sent a docker-config file via SCP which it uses to run the application. The worker is used to build replicas of the containers so that it has higher redundancy and availability to the application, 
 
+The CI pipeline is shown below in this diagram
+
+![CI pipeline](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2022.14.19.png)
   
 
 ## Ansible Pipeline: 
@@ -81,9 +84,11 @@ The Visual Studio Code was linked to a virtual machine on the Google Cloud Platf
 As discussed before ansible was used to configure the VM’s in order to get them to run a docker swarm of the below are images of the sections of the pipeline: 
 
  
-
+![Ansible Pipeline 1](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.59.40.png)  
  
+![Ansible Pipeline 2](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2021.00.07.png)  
 
+![Ansible Pipeline 3](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2021.00.37.png)  
  
 
  
@@ -98,15 +103,18 @@ Tests were written in order to ensure each aspect of the application was running
 
 To test the API functionality of the of the app, request_mock was used to mock the response from random.randint() to assert specific values in order to test the response of the app if it received said values.   
 
+ Below are the coverage reports for the testing of each service
+
+![Unit test 1](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.57.25.png)  
  
+![Unit test 2](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.54.46.png)   
 
-  
+![Unit test 3](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.54.21.png)  
 
-![jenkins build](https://github.com/gbarnacle79/week_6_project/blob/main/Images/jenkins_build.png) 
+![Unit test 4](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2020.53.52.png)  
 
-  
 
-![coverage report](https://github.com/gbarnacle79/week_6_project/blob/main/Images/Coverage_report.png) 
+ 
 
   
 
@@ -118,7 +126,7 @@ To test the API functionality of the of the app, request_mock was used to mock t
 
 A risk assessment was performed to gauge potential issues the app may suffer from when running and to try avoid them. 
 
-![Risk Assessment](https://github.com/gbarnacle79/week_6_project/blob/main/Images/riskassessment.png) 
+![Risk Assessment](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-05%2023.05.29.png) 
 
   
 
@@ -128,7 +136,12 @@ A risk assessment was performed to gauge potential issues the app may suffer fro
 
 In the initial outline of the project, it was intended for the database to be hosted on GCP and to be a full MySQL database, this would allow for data to be saved for future viewings. This was changed to a simpler SQLite database it was easier to configure in regards to docker containers and accrued less cost on the Google Cloud Platform. In future iterations of this project this would be changed 
 
-  
+
+## Future Plans:
+
+If future progress was made on this app, it would be intended to create some CRUD functionality on the site, allowing for users to input names or prizes and to generate the fortune from these inputs. Below is an ERD diagram to show how this might be implemented
+
+ ![Stretch ERD](https://github.com/gbarnacle79/week9/blob/dev/Images/Screenshot%202021-12-06%2013.22.18.png) 
 
   
 
